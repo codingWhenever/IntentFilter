@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="dbh.leo.com.intentfilter">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="dbh.leo.com.intentfilter.MyActivity">
+            <intent-filter>
+                <action android:name="com.leo.a"/>
+                <action android:name="com.leo.b"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.leo.c"/>
+                <category android:name="com.leo.d"/>
+
+                <data android:mimeType="text/plain"/>
+
+
+            </intent-filter>
+        </activity>
+        
+        <activity android:name=".SecondActivity">
+            <intent-filter>
+                <action android:name="com.leo.a"/>
+
+                <category android:name="com.leo.c"/>
+
+                <data android:mimeType="text/plain"/>
+
+            </intent-filter>
+        </activity>
+        <service android:name="dbh.leo.com.intentfilter.MyService"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="dbh.leo.com.intentfilter.MyService"/>
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
